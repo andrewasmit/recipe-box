@@ -25,9 +25,10 @@ body {
 }
 
 .container{
+  display: inline-block;
   border: 2px solid rgb(8, 0, 255);
-  width: 50%;
-  margin: 0 ;
+  width: 45%;
+  margin: 0 auto;
   padding: 1rem;
   text-align: center;
 }
