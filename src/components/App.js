@@ -1,5 +1,6 @@
-import '../App.css';
+import '../index.css';
 import Header from './Header';
+import MainContainer from './MainContainer';
 
 function App() {
   
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <MainContainer />
     </div>
   )
 }
