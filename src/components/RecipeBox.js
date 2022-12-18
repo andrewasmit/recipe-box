@@ -3,7 +3,7 @@ import React from "react";
 function RecipeBox(){
     return(
         <div id ="recipe-box" className="container">
-            <p>This is where we store saved recipes</p>
+            <p>MY RECIPE BOX</p>
         </div>
     )
 }

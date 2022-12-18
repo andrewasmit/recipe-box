@@ -5,7 +5,7 @@ import RecipeContainer from "./RecipeContainer";
 function MainContainer(){
     return(
         <div id="main-container" className="main-container">
-            <p>THIS IS THE BIG MAIN CONTAINER</p>
+            <p>MAIN CONTAINER</p>
             <RecipeContainer />
             <RecipeBox />
         </div>

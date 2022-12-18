@@ -25,9 +25,9 @@ body {
 }
 
 .container{
-  display: inline-block;
+  display: flex;
   border: 2px solid rgb(8, 0, 255);
-  width: 45%;
+  width: 85%;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
