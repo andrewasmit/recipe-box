@@ -5,13 +5,13 @@ import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer(){
+function MainContainer({ recipeData }){
     return(
         <div id="main-container" className="main-container">
             <p>MAIN CONTAINER</p>
             <Switch>
                 <Route exact path="/recipes">
-                    <RecipeContainer />
+                    <RecipeContainer recipeData={recipeData}/>
                 </Route>
                 <Route exact path="/recipe-box">
                     <RecipeBox />
