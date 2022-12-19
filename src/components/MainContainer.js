@@ -14,7 +14,7 @@ function MainContainer({ recipeData }){
                     <RecipeContainer recipeData={recipeData}/>
                 </Route>
                 <Route exact path="/recipe-box">
-                    <RecipeBox />
+                    <RecipeBox recipeData={recipeData}/>
                 </Route>
                 <Route exact path="/">
                     <Home />
