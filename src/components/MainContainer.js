@@ -9,6 +9,7 @@ function MainContainer({ recipeData }){
 
     const [apiRecipes, setApiRecipes] = useState([])
 
+    // Fetch of 100 recipes from API
     useEffect(()=>{
         const options = {
             method: 'GET',
@@ -26,12 +27,14 @@ function MainContainer({ recipeData }){
 
     console.log(apiRecipes);
 
+
+    // Return of JSX
     return(
         <div id="main-container" className="main-container">
             <p>MAIN CONTAINER</p>
             <Switch>
                 <Route exact path="/recipes">
-                    <RecipeContainer recipeData={recipeData}/>
+                    <RecipeContainer apiRecipes={apiRecipes}/>
                 </Route>
                 <Route exact path="/recipe-box">
                     <RecipeBox recipeData={recipeData}/>

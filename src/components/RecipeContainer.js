@@ -1,26 +1,25 @@
 import React from "react";
-// import Recipe from "./Recipe";
+import Recipe from "./Recipe";
 
-function RecipeContainer({ recipeData }){
+function RecipeContainer({ apiRecipes }){
 
-    // const recipesToDisplay=recipeData.map(recipe=>{
-    //     return <Recipe 
-    //                 key={recipe.id} 
-    //                 id={recipe.id} 
-    //                 name={recipe.name} 
-    //                 meal={recipe.meal} 
-    //                 image={recipe.image} 
-    //                 notes={recipe.notes} 
-    //                 status={recipe.status} 
-    //                 effort={recipe.effort}
-    //                 link={recipe.link}
-    //             />
-    // })
+    const base=apiRecipes.baseUri
+
+    const recipesToDisplay=apiRecipes.results.map(recipe=>{
+        return <Recipe 
+                    key={recipe.id} 
+                    id={recipe.id} 
+                    name={recipe.title} 
+                    image={base + recipe.image} 
+                    effort={recipe.readyInMinutes}
+                    link={recipe.sourceUrl}
+                />
+    })
 
     return(
         <div id="recipe-container" className="container">
             <p>RECIPE CONTAINER</p>
-            {/* {recipesToDisplay} */}
+            {recipesToDisplay}
         </div>
     )
 }

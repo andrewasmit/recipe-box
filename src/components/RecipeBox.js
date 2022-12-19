@@ -1,10 +1,10 @@
 import React from "react";
-import Recipe from "./Recipe";
+import RecipeCard from "./RecipeCard";
 
 function RecipeBox({ recipeData }){
 
     const recipesToDisplay=recipeData.map(recipe=>{
-        return <Recipe 
+        return <RecipeCard 
                     key={recipe.id} 
                     id={recipe.id} 
                     name={recipe.name} 
@@ -18,6 +18,8 @@ function RecipeBox({ recipeData }){
     })
 
 
+
+    // Return of JSX
     return(
         <div id ="recipe-box" className="container">
             <p>MY RECIPE BOX</p>

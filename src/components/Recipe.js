@@ -1,40 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
 
-function Recipe({ id, name, image, status, meal, notes, effort, link }){
 
-    const [showMore, setShowMore] = useState(false);
+function Recipe({ id, name, image, effort, link }){
 
-    const noteLis= notes.map(n=>{
-        return <li key={n}>{n}</li>
-    })
-
-    function handleShowMore(){
-        console.log('Show More for: ', id, showMore);
-        setShowMore(!showMore)
+    function effortAmount(time){
+        if (time <10){
+            return 1;
+        } if (time >=10 && time<=20){
+            return 2
+        } if (time >20 && time <=30){
+            return 3
+        }if (time >30 && time <=45){
+            return 4
+        } else return 5
     }
 
-    const effortEmojis = [...Array(effort)].map(e=>"⏰ ")
+    const effortEmojis = [...Array(effortAmount(effort))].map(()=>"⏰")
 
     return(
-        <div id={id}>
+        <div id={id} >
             <h2>{name}</h2>
-            <img src={image} alt={name} className="img-card"></img>
-            <h4>Effort to Prepare: {effortEmojis}</h4>
-            <a href={link} target="_blank">Full Recipe</a>
+            <img src={image} alt={name}className="img-card"></img>
+            <h3>Effort to Prepare: {effortEmojis}</h3>
             <br></br>
-            <button onClick={handleShowMore}>Show More Details</button>
-            <div hidden={ showMore ? null : "disabled"} id="show-more">
-                <h3>Meal: {meal}</h3>
-                
-                <h4>Status of Recipe: {status}</h4>
-                <h4>Notes: </h4>
-                <ul>
-                    {noteLis}
-                </ul>
-            </div>
+            <a href={link} target="_blank">Show Recipe</a>
+            <br></br>
+            <button>Add to My Recipe Box!</button>
         </div>
     )
 }
-
 
 export default Recipe;
