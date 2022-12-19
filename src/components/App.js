@@ -1,25 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../index.css';
 import Header from './Header';
 import MainContainer from './MainContainer';
 
 function App() {
 
+// Initialization of state variables
+  const [apiRecipes, setApiRecipes] = useState([])
   const [recipeData, setRecipeData] = useState([])
-  
-  useEffect(()=>{
-    fetch("http://localhost:3000/recipes")
-    .then(res=>res.json())
-    .then(data=>setRecipeData(data))
+  const [search, setSearch] = useState("");
+
+  // Fetch of db.json for "My Recipe Box"
+useEffect(()=>{
+  fetch("http://localhost:3000/recipes")
+  .then(res=>res.json()) 
+  .then(data=>setRecipeData(data))
+  .catch(err => console.error(err));
 }, [])
 
-console.log(recipeData)
+  // Fetch of 1,000 recipes from API
+  useEffect(()=>{
+      const options = {
+          method: 'GET',
+          headers: {
+              'X-RapidAPI-Key': 'f210eecfb5mshfc612e739004a93p1bdbcbjsn591e5976f5cf',
+              'X-RapidAPI-Host': 'webknox-recipes.p.rapidapi.com'
+          }
+      };
+      
+      fetch('https://webknox-recipes.p.rapidapi.com/recipes/search?query=recipe&number=1000&intolerances=egg%2C%20gluten&excludeIngredients=coconut', options)
+          .then(response => response.json())
+          .then(response => setApiRecipes(response))
+          .catch(err => console.error(err));
+  }, [])
+
+  
+console.log("In App.js ", search);
 
 // Return JSX
   return (
     <div className="App">
-      <Header />
-      <MainContainer recipeData={recipeData}/>
+      <Header search={search} setSearch={setSearch}/>
+      <MainContainer apiRecipes={apiRecipes} recipeData={recipeData} search={search}/>
     </div>
   )
 }

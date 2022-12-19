@@ -5,27 +5,7 @@ import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer({ recipeData }){
-
-    const [apiRecipes, setApiRecipes] = useState([])
-
-    // Fetch of 100 recipes from API
-    useEffect(()=>{
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'f210eecfb5mshfc612e739004a93p1bdbcbjsn591e5976f5cf',
-                'X-RapidAPI-Host': 'webknox-recipes.p.rapidapi.com'
-            }
-        };
-        
-        fetch('https://webknox-recipes.p.rapidapi.com/recipes/search?query=recipe&number=100&intolerances=egg%2C%20gluten&excludeIngredients=coconut', options)
-            .then(response => response.json())
-            .then(response => setApiRecipes(response))
-            .catch(err => console.error(err));
-    }, [])
-
-    console.log(apiRecipes);
+function MainContainer({ recipeData, apiRecipes, search }){
 
 
     // Return of JSX
@@ -34,10 +14,10 @@ function MainContainer({ recipeData }){
             <p>MAIN CONTAINER</p>
             <Switch>
                 <Route exact path="/recipes">
-                    <RecipeContainer apiRecipes={apiRecipes}/>
+                    <RecipeContainer apiRecipes={apiRecipes} search={search}/>
                 </Route>
                 <Route exact path="/recipe-box">
-                    <RecipeBox recipeData={recipeData}/>
+                    <RecipeBox recipeData={recipeData} search={search}/>
                 </Route>
                 <Route exact path="/">
                     <Home />

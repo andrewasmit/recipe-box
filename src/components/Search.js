@@ -1,10 +1,13 @@
 import React from "react";
 
-function Search(){
+function Search({ setSearch, search }){
+
+
+    // Return JSX
     return(
         <div id = "search-bar">
             <label>Search Recipes</label>
-            <input id="search" type ="text"></input>
+            <input id="search" type ="text" value={search} onChange={e=>setSearch(e.target.value)}></input>
             <span id="filter">
                 <label>Filter by Category</label>
                 <select>

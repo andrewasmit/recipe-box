@@ -1,9 +1,10 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
 
-function RecipeBox({ recipeData }){
+function RecipeBox({ recipeData, search }){
 
-    const recipesToDisplay=recipeData.map(recipe=>{
+    const recipesToDisplay=recipeData.filter(result=>result.name.toLowerCase().includes(search.toLowerCase()))
+    .map(recipe=>{
         return <RecipeCard 
                     key={recipe.id} 
                     id={recipe.id} 
