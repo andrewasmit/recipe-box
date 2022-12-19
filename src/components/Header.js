@@ -7,7 +7,6 @@ function Header(){
     return(
         <div className="App-header">
             <h1>Recipe Box</h1>
-            <h3>The Place to Keep your Food Blogs</h3>
             <NavBar />
             <Search />
             <Filter />

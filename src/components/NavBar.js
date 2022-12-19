@@ -7,7 +7,7 @@ function NavBar(){
             <h3>THIS IS THE NAVBAR</h3>
             <NavLink to="/" >Home</NavLink>
             <NavLink to="/recipes">Recipes</NavLink>
-            <NavLink to="/my-recipe-box">My Recipes Box</NavLink>
+            <NavLink to="/recipe-box">My Recipe Box</NavLink>
             <NavLink to="/add-recipe">Add New Recipe</NavLink>
         </div>
     )
