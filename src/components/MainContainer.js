@@ -13,12 +13,17 @@ function MainContainer(){
                 <Route exact path="/recipes">
                     <RecipeContainer />
                 </Route>
-                
-                <Route>
-                    <RecipeBox exact path="/recipe-box"/>
+                <Route exact path="/recipe-box">
+                    <RecipeBox />
                 </Route>
-                <Route>
-                    <Home exact path="/"/>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route exact path="/add-recipe">
+                    <NewRecipe />
+                </Route>
+                <Route path="*">
+                    <h1>Error 404  Page Not Found</h1>
                 </Route>
             </Switch>
         </div>
