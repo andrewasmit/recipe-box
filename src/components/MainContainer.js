@@ -45,10 +45,6 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
         } else return 5
     }
 
-    
-
-
-
     // Return of JSX
     return(
         <div id="main-container" className="main-container">

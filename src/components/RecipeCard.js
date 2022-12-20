@@ -1,6 +1,17 @@
 import React, {useState} from "react";
 
-function Recipe({ id, name, image, status, meal, notes, effort, link, onDeleteFromBox }){
+function Recipe({ 
+        id, 
+        name, 
+        image, 
+        status, 
+        meal, 
+        notes, 
+        effort, 
+        link, 
+        onDeleteFromBox,  
+    }){
+
     
     // State of 'Show More Details' button toggle
     const [showMore, setShowMore] = useState(false);
@@ -13,14 +24,18 @@ function Recipe({ id, name, image, status, meal, notes, effort, link, onDeleteFr
     // Convert the 1-5 scale into # of Clock Emojis to display
     const effortEmojis = [...Array(effort)].map(()=>"⏰ ")
 
-
+    // handles the backend fetch & passes ID up to App.js to render the DOM appropriately
     function handleDeleteFromBox(){
         onDeleteFromBox(id)
-        fetch(`http://localhost:3000/${id}`,{
+        fetch(`http://localhost:3000/recipes/${id}`,{
             method: "DELETE"
         })
         .then(res=>res.json())
         .then(data=>console.log(data));
+    }
+
+    function handleUpdateRecipe(){
+        console.log(id);
     }
 
 
@@ -41,7 +56,7 @@ function Recipe({ id, name, image, status, meal, notes, effort, link, onDeleteFr
                 <ul>
                     {noteLis}
                 </ul>
-                <button>Edit Details</button>
+                <button onClick={handleUpdateRecipe}>Edit Details</button>
                 <br></br>
                 <button onClick={handleDeleteFromBox}>Delete from My Recipe Box</button>
             </div>
