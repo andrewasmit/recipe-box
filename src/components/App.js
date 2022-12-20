@@ -37,7 +37,7 @@ useEffect(()=>{
       .catch(err => console.error(err));
   }, [])
 
-  
+  console.log(recipeData)
 
 
 // Return JSX

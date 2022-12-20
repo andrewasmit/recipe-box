@@ -25,16 +25,8 @@ function RecipeBox({ recipeData, search, categorySelect }){
                 />
     })
 
-    // console.log(recipeData.filter(recipe=>{
-    //     if(categorySelect==="All"){
-    //         return true
-    //     } if (recipe.meal.toLowerCase()===categorySelect.toLowerCase()){
-    //         return true
-    //     }}))
-
+ 
    
-
-
     // Return of JSX
     return(
         <div id ="recipe-box" className="container">
