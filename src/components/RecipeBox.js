@@ -18,7 +18,7 @@ function RecipeBox({ recipeData, search }){
                 />
     })
 
-
+console.log(recipeData)
 
     // Return of JSX
     return(

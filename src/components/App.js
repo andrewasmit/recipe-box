@@ -9,6 +9,7 @@ function App() {
   const [apiRecipes, setApiRecipes] = useState([])
   const [recipeData, setRecipeData] = useState([])
   const [search, setSearch] = useState("");
+  const [categorySelect, setCategorySelect] = useState("All")
 
   // Fetch of db.json for "My Recipe Box"
 useEffect(()=>{
@@ -35,13 +36,13 @@ useEffect(()=>{
   }, [])
 
   
-console.log("In App.js ", search);
+console.log("In App.js ", categorySelect);
 
 // Return JSX
   return (
     <div className="App">
-      <Header search={search} setSearch={setSearch}/>
-      <MainContainer apiRecipes={apiRecipes} recipeData={recipeData} search={search}/>
+      <Header search={search} setSearch={setSearch} categorySelect={categorySelect} setCategorySelect={setCategorySelect}/>
+      <MainContainer apiRecipes={apiRecipes} recipeData={recipeData} search={search} categorySelect={categorySelect}/>
     </div>
   )
 }

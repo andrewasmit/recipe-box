@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search({ setSearch, search }){
+function Search({ setSearch, search, categorySelect, setCategorySelect }){
 
 
     // Return JSX
@@ -10,10 +10,13 @@ function Search({ setSearch, search }){
             <input id="search" type ="text" value={search} onChange={e=>setSearch(e.target.value)}></input>
             <span id="filter">
                 <label>Filter by Category</label>
-                <select>
-                    <option>OPTION 1</option>
-                    <option>OPTION 2</option>
-                    <option>OPTION 3</option>
+                <select onChange={e=>setCategorySelect(e.target.value)}>
+                    <option>All</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Side</option>
+                    <option>Dessert</option>
                 </select>
             </span>
         </div>
