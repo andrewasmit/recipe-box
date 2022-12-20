@@ -41,6 +41,12 @@ function handleNewRecipe(newRecipe){
   setRecipeData([...recipeData, newRecipe]);
 }
 
+function onDeleteFromBox(id){
+  console.log("In App: ID of Deleted ", id);
+  const newData=recipeData.filter(r=>r.id!==id)
+  setRecipeData(newData)
+}
+
 // Return JSX
   return (
     <div className="App">
@@ -56,6 +62,7 @@ function handleNewRecipe(newRecipe){
           search={search} 
           categorySelect={categorySelect}
           onNewRecipeSubmit={handleNewRecipe}
+          onDeleteFromBox={onDeleteFromBox}
       />
     </div>
   )

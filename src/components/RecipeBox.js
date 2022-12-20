@@ -1,7 +1,7 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
 
-function RecipeBox({ recipeData, search, categorySelect }){
+function RecipeBox({ recipeData, search, categorySelect, onDeleteFromBox }){
 
 
     const recipesToDisplay= recipeData.filter(recipe=>{
@@ -22,6 +22,7 @@ function RecipeBox({ recipeData, search, categorySelect }){
                     status={recipe.status} 
                     effort={recipe.effort}
                     link={recipe.link}
+                    onDeleteFromBox={onDeleteFromBox}
                 />
     })
 

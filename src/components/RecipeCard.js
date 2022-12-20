@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
-function Recipe({ id, name, image, status, meal, notes, effort, link }){
-
+function Recipe({ id, name, image, status, meal, notes, effort, link, onDeleteFromBox }){
+    
+    // State of 'Show More Details' button toggle
     const [showMore, setShowMore] = useState(false);
 
     // create li's for the 'Notes' section
@@ -9,12 +10,18 @@ function Recipe({ id, name, image, status, meal, notes, effort, link }){
         return <li key={n}>{n}</li>
     })
 
-    function handleShowMore(){
-        console.log('Show More for: ', id, showMore);
-        setShowMore(!showMore)
-    }
-
+    // Convert the 1-5 scale into # of Clock Emojis to display
     const effortEmojis = [...Array(effort)].map(()=>"⏰ ")
+
+
+    function handleDeleteFromBox(){
+        onDeleteFromBox(id)
+        fetch(`http://localhost:3000/${id}`,{
+            method: "DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data));
+    }
 
 
     // Return JSX
@@ -25,7 +32,7 @@ function Recipe({ id, name, image, status, meal, notes, effort, link }){
             <h4>Effort to Prepare: {effortEmojis}</h4>
             <a href={link} target="_blank">Full Recipe</a>
             <br></br>
-            <button onClick={handleShowMore}>Show More Details</button>
+            <button onClick={()=>setShowMore(!showMore)}>Show More Details</button>
             <div hidden={ showMore ? null : "disabled"} id="show-more">
                 <h3>Meal: {meal}</h3>
                 
@@ -34,6 +41,9 @@ function Recipe({ id, name, image, status, meal, notes, effort, link }){
                 <ul>
                     {noteLis}
                 </ul>
+                <button>Edit Details</button>
+                <br></br>
+                <button onClick={handleDeleteFromBox}>Delete from My Recipe Box</button>
             </div>
         </div>
     )

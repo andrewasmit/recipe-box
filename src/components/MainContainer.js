@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import RecipeBox from "./RecipeBox";
 import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRecipeSubmit }){
+function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRecipeSubmit, onDeleteFromBox }){
+    const history=useHistory();
 
     // The State of NewForm inputs
     const [title, setTitle] = useState("")
@@ -16,11 +17,11 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
     const [status, setStatus] =useState("--Select an Option--")
     const [notes, setNotes] = useState("")
 
+    // Auto-populating the NewRecipe form data upon click
     function onAddRecipeClick(id){
         console.log("In MainContainer: ", id)
         const base= apiRecipes.baseUri;
         const target=apiRecipes.results.filter(rec=>rec.id === id);
-        console.log(target[0])
         setMeal("--Select an Option--")
         setTitle(target[0].title)
         setNotes("")
@@ -28,9 +29,10 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
         setRecipeLink(target[0].sourceUrl)
         setStatus("Need to try it")
         setEffort(()=>effortAmount(target[0].readyInMinutes))
+        history.push("/add-recipe")
     }
 
-
+// Translate 'readyInMinutes' from API data to a 1-5 scale for ⏰
     function effortAmount(time){
         if (time <10){
             return 1;
@@ -42,6 +44,8 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
             return 4
         } else return 5
     }
+
+    
 
 
 
@@ -63,6 +67,7 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
                         recipeData={recipeData} 
                         search={search} 
                         categorySelect={categorySelect}
+                        onDeleteFromBox={onDeleteFromBox}
                     />
                 </Route>
                 <Route exact path="/">
