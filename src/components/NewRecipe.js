@@ -1,30 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function NewRecipe(){
 
+    const [title, setTitle] = useState("")
+    const [imgLink, setImgLink] = useState("")
+    const [recipeLink, setRecipeLink] = useState("")
+    const [effort, setEffort] = useState("--Select an Option--")
+    const [meal, setMeal] = useState("--Select an Option--")
+    const [status, setStatus] =useState("--Select an Option--")
+    const [notes, setNotes] = useState("")
 
+    function handleFormSubmit(e){
+        e.preventDefault();
+        const newRecipe={
+            effort: effort,
+            name: title,
+            notes:[
+                notes
+            ],
+            status: status,
+            meal: meal,
+            image: imgLink,
+            link: recipeLink,
+        };
+        console.log(newRecipe);
+    }
+
+    // console.log(notes);
+
+    // Return JSX
     return(
         <div id ="add-new-recipe" className="container">
             <p>ADD NEW RECIPE</p>
-            <form>
+            <form onSubmit={handleFormSubmit}>
                 <label>
                     Title:
-                    <input type="text" name="title" />
+                    <input value={title} onChange={e=>setTitle(e.target.value)} type="text" name="title" />
                 </label>
                 <br></br>
                 <label>
                     Link to Image:
-                    <input type="text" name="image" />
+                    <input value={imgLink} onChange={e=>setImgLink(e.target.value)} type="text" name="image" />
                 </label>
                 <br></br>
                 <label>
                     Link to Full Recipe:
-                    <input type="text" name="link" />
+                    <input value={recipeLink} onChange={e=>setRecipeLink(e.target.value)} type="text" name="link" />
                 </label>
                 <br></br>
                 <label>
                     Effort :
-                    <select name="effort" defaultValue="--Select an Option--">
+                    <select value ={effort} onChange={e=>setEffort(e.target.value)} name="effort" >
                         <option disabled>--Select an Option--</option>
                         <option>1</option>
                         <option>2</option>
@@ -36,7 +62,7 @@ function NewRecipe(){
                 <br></br>
                 <label>
                     Meal :
-                    <select name="Meal" defaultValue="--Select an Option--">
+                    <select value ={meal} onChange={e=>setMeal(e.target.value.toLowerCase())} name="Meal" >
                         <option disabled>--Select an Option--</option>
                         <option>Breakfast</option>
                         <option>Lunch</option>
@@ -48,7 +74,7 @@ function NewRecipe(){
                 <br></br>
                 <label>
                     Status :
-                    <select name="status" defaultValue="--Select an Option--">
+                    <select value={status} onChange={e=>setStatus(e.target.value.toLowerCase())} name="status" >
                         <option disabled>--Select an Option--</option>
                         <option>Repeat</option>
                         <option>Need to try it</option>
@@ -58,7 +84,7 @@ function NewRecipe(){
                 <br></br>
                 <label>
                     Notes: (optional)
-                    <input type="text" name="notes" />
+                    <input value={notes} onChange={e=>setNotes(e.target.value)} type="text" name="notes" />
                 </label>
                 <br></br>
                 <input type="submit" value="Submit" />
