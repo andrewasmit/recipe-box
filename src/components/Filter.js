@@ -4,7 +4,7 @@ function Filter({ categorySelect, setCategorySelect }){
     return(
         <div id= "filter">
             <label>Filter by Category</label>
-                <select value={categorySelect }onChange={e=>setCategorySelect(e.target.value)}>
+                <select value={categorySelect} onChange={e=>setCategorySelect(e.target.value)}>
                     <option>All</option>
                     <option>Breakfast</option>
                     <option>Lunch</option>
