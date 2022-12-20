@@ -36,13 +36,23 @@ useEffect(()=>{
   }, [])
 
   
-console.log("In App.js ", categorySelect);
+
 
 // Return JSX
   return (
     <div className="App">
-      <Header search={search} setSearch={setSearch} categorySelect={categorySelect} setCategorySelect={setCategorySelect}/>
-      <MainContainer apiRecipes={apiRecipes} recipeData={recipeData} search={search} categorySelect={categorySelect}/>
+      <Header 
+          search={search} 
+          setSearch={setSearch} 
+          categorySelect={categorySelect} 
+          setCategorySelect={setCategorySelect}
+      />
+      <MainContainer 
+          apiRecipes={apiRecipes} 
+          recipeData={recipeData} 
+          search={search} 
+          categorySelect={categorySelect}
+      />
     </div>
   )
 }

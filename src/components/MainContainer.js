@@ -5,7 +5,7 @@ import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer({ recipeData, apiRecipes, search }){
+function MainContainer({ recipeData, apiRecipes, search, categorySelect }){
 
 
     // Return of JSX
@@ -17,7 +17,7 @@ function MainContainer({ recipeData, apiRecipes, search }){
                     <RecipeContainer apiRecipes={apiRecipes} search={search}/>
                 </Route>
                 <Route exact path="/recipe-box">
-                    <RecipeBox recipeData={recipeData} search={search}/>
+                    <RecipeBox recipeData={recipeData} search={search} categorySelect={categorySelect}/>
                 </Route>
                 <Route exact path="/">
                     <Home />

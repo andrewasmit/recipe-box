@@ -1,9 +1,16 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
 
-function RecipeBox({ recipeData, search }){
+function RecipeBox({ recipeData, search, categorySelect }){
 
-    const recipesToDisplay=recipeData.filter(result=>result.name.toLowerCase().includes(search.toLowerCase()))
+
+    const recipesToDisplay= recipeData.filter(recipe=>{
+        if(categorySelect==="All"){
+            return true
+        } if (recipe.meal.toLowerCase()===categorySelect.toLowerCase()){
+            return true
+        }})
+    .filter(result=>result.name.toLowerCase().includes(search.toLowerCase()))
     .map(recipe=>{
         return <RecipeCard 
                     key={recipe.id} 
@@ -18,7 +25,15 @@ function RecipeBox({ recipeData, search }){
                 />
     })
 
-console.log(recipeData)
+    // console.log(recipeData.filter(recipe=>{
+    //     if(categorySelect==="All"){
+    //         return true
+    //     } if (recipe.meal.toLowerCase()===categorySelect.toLowerCase()){
+    //         return true
+    //     }}))
+
+   
+
 
     // Return of JSX
     return(

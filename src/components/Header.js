@@ -11,7 +11,7 @@ function Header({ search, setSearch, categorySelect, setCategorySelect }){
             <Search 
                 search={search} 
                 setSearch={setSearch} 
-                categorySelect={categorySelect} 
+                categorySelect={categorySelect}
                 setCategorySelect={setCategorySelect}
             />
         </div>
