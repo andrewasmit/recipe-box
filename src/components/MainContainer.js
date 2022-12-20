@@ -5,7 +5,7 @@ import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer({ recipeData, apiRecipes, search, categorySelect }){
+function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRecipeSubmit }){
 
 
     // Return of JSX
@@ -23,7 +23,7 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect }){
                     <Home />
                 </Route>
                 <Route exact path="/add-recipe">
-                    <NewRecipe />
+                    <NewRecipe onNewRecipeSubmit={onNewRecipeSubmit}/>
                 </Route>
                 <Route path="*">
                     <h1>Error 404  Page Not Found</h1>

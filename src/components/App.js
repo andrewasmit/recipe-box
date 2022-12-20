@@ -37,8 +37,9 @@ useEffect(()=>{
       .catch(err => console.error(err));
   }, [])
 
-  console.log(recipeData)
-
+function handleNewRecipe(newRecipe){
+  setRecipeData([...recipeData, newRecipe]);
+}
 
 // Return JSX
   return (
@@ -54,6 +55,7 @@ useEffect(()=>{
           recipeData={recipeData} 
           search={search} 
           categorySelect={categorySelect}
+          onNewRecipeSubmit={handleNewRecipe}
       />
     </div>
   )

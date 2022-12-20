@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function NewRecipe(){
+function NewRecipe({ onNewRecipeSubmit }){
 
     const [title, setTitle] = useState("")
     const [imgLink, setImgLink] = useState("")
@@ -30,10 +30,19 @@ function NewRecipe(){
         setMeal("--Select an Option--")
         setStatus("--Select an Option--")
         setNotes("")
-        console.log(newRecipe);
+        // console.log(newRecipe);
+
+        fetch("http://localhost:3000/recipes",{
+            method: "POST",
+            headers:{
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(newRecipe)
+        })
+        .then(res=>res.json())
+        .then(data=>onNewRecipeSubmit(data))
     }
 
-    // console.log(notes);
 
     // Return JSX
     return(
