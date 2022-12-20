@@ -23,7 +23,7 @@ function Recipe({ id, name, image, effort, link }){
             <img src={image} alt={name}className="img-card"></img>
             <h3>Effort to Prepare: {effortEmojis}</h3>
             <br></br>
-            <a href={link} target="_blank">Show Recipe</a>
+            <a href={link} target="_blank">Go to Full Recipe</a>
             <br></br>
             <button>Add to My Recipe Box!</button>
         </div>

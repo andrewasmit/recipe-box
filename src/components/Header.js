@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import NavBar from "./NavBar";
+import Filter from "./Filter";
 
 function Header({ search, setSearch, categorySelect, setCategorySelect }){
 
@@ -11,6 +12,10 @@ function Header({ search, setSearch, categorySelect, setCategorySelect }){
             <Search 
                 search={search} 
                 setSearch={setSearch} 
+                categorySelect={categorySelect}
+                setCategorySelect={setCategorySelect}
+            />
+            <Filter 
                 categorySelect={categorySelect}
                 setCategorySelect={setCategorySelect}
             />

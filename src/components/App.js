@@ -11,6 +11,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [categorySelect, setCategorySelect] = useState("All")
 
+
   // Fetch of db.json for "My Recipe Box"
 useEffect(()=>{
   fetch("http://localhost:3000/recipes")
@@ -19,20 +20,21 @@ useEffect(()=>{
   .catch(err => console.error(err));
 }, [])
 
+
   // Fetch of 1,000 recipes from API
   useEffect(()=>{
-      const options = {
-          method: 'GET',
-          headers: {
-              'X-RapidAPI-Key': 'f210eecfb5mshfc612e739004a93p1bdbcbjsn591e5976f5cf',
-              'X-RapidAPI-Host': 'webknox-recipes.p.rapidapi.com'
-          }
-      };
-      
-      fetch('https://webknox-recipes.p.rapidapi.com/recipes/search?query=recipe&number=1000&intolerances=egg%2C%20gluten&excludeIngredients=coconut', options)
-          .then(response => response.json())
-          .then(response => setApiRecipes(response))
-          .catch(err => console.error(err));
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'f210eecfb5mshfc612e739004a93p1bdbcbjsn591e5976f5cf',
+        'X-RapidAPI-Host': 'webknox-recipes.p.rapidapi.com'
+      }
+    };
+    
+    fetch('https://webknox-recipes.p.rapidapi.com/recipes/search?query=food&number=100&type=main%20course', options)
+      .then(response => response.json())
+      .then(response => setApiRecipes(response))
+      .catch(err => console.error(err));
   }, [])
 
   
