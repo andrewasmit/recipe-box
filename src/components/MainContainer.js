@@ -16,6 +16,34 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
     const [status, setStatus] =useState("--Select an Option--")
     const [notes, setNotes] = useState("")
 
+    function onAddRecipeClick(id){
+        console.log("In MainContainer: ", id)
+        const base= apiRecipes.baseUri;
+        const target=apiRecipes.results.filter(rec=>rec.id === id);
+        console.log(target[0])
+        setMeal("--Select an Option--")
+        setTitle(target[0].title)
+        setNotes("")
+        setImgLink(base + target[0].image)
+        setRecipeLink(target[0].sourceUrl)
+        setStatus("Need to try it")
+        setEffort(()=>effortAmount(target[0].readyInMinutes))
+    }
+
+
+    function effortAmount(time){
+        if (time <10){
+            return 1;
+        } if (time >=10 && time<=20){
+            return 2
+        } if (time >20 && time <=30){
+            return 3
+        }if (time >30 && time <=45){
+            return 4
+        } else return 5
+    }
+
+
 
     // Return of JSX
     return(
@@ -23,10 +51,19 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
             <p>MAIN CONTAINER</p>
             <Switch>
                 <Route exact path="/recipes">
-                    <RecipeContainer apiRecipes={apiRecipes} search={search}/>
+                    <RecipeContainer 
+                        apiRecipes={apiRecipes} 
+                        search={search}
+                        onAddRecipeClick={onAddRecipeClick}
+                        effortAmount={effortAmount} 
+                    />
                 </Route>
                 <Route exact path="/recipe-box">
-                    <RecipeBox recipeData={recipeData} search={search} categorySelect={categorySelect}/>
+                    <RecipeBox 
+                        recipeData={recipeData} 
+                        search={search} 
+                        categorySelect={categorySelect}
+                    />
                 </Route>
                 <Route exact path="/">
                     <Home />

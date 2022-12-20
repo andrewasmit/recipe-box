@@ -1,18 +1,10 @@
 import React from "react";
 
 
-function Recipe({ id, name, image, effort, link }){
+function Recipe({ id, name, image, effort, link, onAddRecipeClick, effortAmount }){
 
-    function effortAmount(time){
-        if (time <10){
-            return 1;
-        } if (time >=10 && time<=20){
-            return 2
-        } if (time >20 && time <=30){
-            return 3
-        }if (time >30 && time <=45){
-            return 4
-        } else return 5
+    function handleAddToClick(){
+        onAddRecipeClick(id)
     }
 
     const effortEmojis = [...Array(effortAmount(effort))].map(()=>"⏰")
@@ -25,7 +17,7 @@ function Recipe({ id, name, image, effort, link }){
             <br></br>
             <a href={link} target="_blank">Go to Full Recipe</a>
             <br></br>
-            <button>Add to My Recipe Box!</button>
+            <button onClick={handleAddToClick}>Add to My Recipe Box!</button>
         </div>
     )
 }

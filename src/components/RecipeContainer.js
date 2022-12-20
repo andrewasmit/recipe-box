@@ -1,7 +1,7 @@
 import React from "react";
 import Recipe from "./Recipe";
 
-function RecipeContainer({ apiRecipes, search }){
+function RecipeContainer({ apiRecipes, search, onAddRecipeClick, effortAmount }){
 
     const base=apiRecipes.baseUri
 
@@ -14,10 +14,12 @@ function RecipeContainer({ apiRecipes, search }){
                     image={base + recipe.image} 
                     effort={recipe.readyInMinutes}
                     link={recipe.sourceUrl}
+                    onAddRecipeClick={onAddRecipeClick}
+                    effortAmount={effortAmount}
                 />
     })
 
-    console.log("In RecipeContainer ", recipesToDisplay)
+    // console.log("In RecipeContainer: ID of clicked Recipe ", onAddRecipeClick)
 
     return(
         <div id="recipe-container" className="container">
