@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
-function NewRecipe({ onNewRecipeSubmit }){
+function NewRecipe({ 
+        onNewRecipeSubmit,
+        title,
+        setTitle,
+        effort,
+        setEffort,
+        imgLink,
+        setImgLink,
+        notes,
+        setNotes,
+        status,
+        setStatus,
+        meal,
+        setMeal,
+        recipeLink,
+        setRecipeLink
+     }){
 
-    const [title, setTitle] = useState("")
-    const [imgLink, setImgLink] = useState("")
-    const [recipeLink, setRecipeLink] = useState("")
-    const [effort, setEffort] = useState("--Select an Option--")
-    const [meal, setMeal] = useState("--Select an Option--")
-    const [status, setStatus] =useState("--Select an Option--")
-    const [notes, setNotes] = useState("")
+    
 
     function handleFormSubmit(e){
         e.preventDefault();
@@ -44,6 +54,7 @@ function NewRecipe({ onNewRecipeSubmit }){
     }
 
 
+    
     // Return JSX
     return(
         <div id ="add-new-recipe" className="container">

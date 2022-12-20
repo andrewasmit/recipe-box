@@ -6,8 +6,8 @@ function NavBar(){
         <div id="navbar">
             <h3>THIS IS THE NAVBAR</h3>
             <NavLink to="/" >Home</NavLink>
-            <NavLink to="/recipes">Search All Recipes</NavLink>
             <NavLink to="/recipe-box">My Recipe Box</NavLink>
+            <NavLink to="/recipes">Search New Recipes</NavLink>
             <NavLink to="/add-recipe">Add New Recipe</NavLink>
         </div>
     )
