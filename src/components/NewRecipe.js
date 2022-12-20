@@ -23,6 +23,13 @@ function NewRecipe(){
             image: imgLink,
             link: recipeLink,
         };
+        setTitle("")
+        setImgLink("")
+        setRecipeLink("")
+        setEffort("--Select an Option--")
+        setMeal("--Select an Option--")
+        setStatus("--Select an Option--")
+        setNotes("")
         console.log(newRecipe);
     }
 
