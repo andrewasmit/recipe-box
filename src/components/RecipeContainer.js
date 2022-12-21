@@ -16,7 +16,6 @@ function RecipeContainer({ apiRecipes, search, onAddRecipeClick, effortAmount })
                     link={recipe.sourceUrl}
                     onAddRecipeClick={onAddRecipeClick}
                     effortAmount={effortAmount}
-                    className="recipeCard"
                 />
     })
 
