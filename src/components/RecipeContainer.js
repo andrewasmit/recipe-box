@@ -16,10 +16,10 @@ function RecipeContainer({ apiRecipes, search, onAddRecipeClick, effortAmount })
                     link={recipe.sourceUrl}
                     onAddRecipeClick={onAddRecipeClick}
                     effortAmount={effortAmount}
+                    className="recipeCard"
                 />
     })
 
-    // console.log("In RecipeContainer: ID of clicked Recipe ", onAddRecipeClick)
 
     return(
         <div id="recipe-container" className="container">

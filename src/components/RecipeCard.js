@@ -41,7 +41,7 @@ function Recipe({
 
     // Return JSX
     return(
-        <div id={id}>
+        <div id={id} className="recipe-card">
             <h2>{name}</h2>
             <img src={image} alt={name} className="img-card"></img>
             <h4>Effort to Prepare: {effortEmojis}</h4>

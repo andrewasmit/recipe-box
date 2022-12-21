@@ -26,17 +26,25 @@ body {
 
 .container{
   display: inline-block;
-  border: 2px solid rgb(8, 0, 255);
-  width: 85%;
+  border: 2px solid black;
+  width: 90%;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+}
+
+.recipe-card{
+  border: 2px solid rgb(8, 0, 255);
+  width: auto;
+  padding: 2px;
+  display: inline-block;
 }
 
 .img-card{
   height: 30%;
   width: 350px;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

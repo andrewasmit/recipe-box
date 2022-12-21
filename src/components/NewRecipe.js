@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 function NewRecipe({ 
         onNewRecipeSubmit,
@@ -18,21 +19,22 @@ function NewRecipe({
         setRecipeLink
      }){
 
-    
+    const history=useHistory();
 
     function handleFormSubmit(e){
         e.preventDefault();
         const newRecipe={
-            effort: effort,
             name: title,
+            image: imgLink,
+            status: status,
+            effort: effort,
+            meal: meal,
             notes:[
                 notes
             ],
-            status: status,
-            meal: meal,
-            image: imgLink,
             link: recipeLink,
         };
+        
         setTitle("")
         setImgLink("")
         setRecipeLink("")
@@ -40,7 +42,6 @@ function NewRecipe({
         setMeal("--Select an Option--")
         setStatus("--Select an Option--")
         setNotes("")
-        // console.log(newRecipe);
 
         fetch("http://localhost:3000/recipes",{
             method: "POST",
@@ -51,10 +52,11 @@ function NewRecipe({
         })
         .then(res=>res.json())
         .then(data=>onNewRecipeSubmit(data))
+        history.push("/recipe-box")
     }
 
 
-    
+
     // Return JSX
     return(
         <div id ="add-new-recipe" className="container">

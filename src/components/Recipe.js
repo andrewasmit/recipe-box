@@ -10,7 +10,7 @@ function Recipe({ id, name, image, effort, link, onAddRecipeClick, effortAmount 
     const effortEmojis = [...Array(effortAmount(effort))].map(()=>"⏰")
 
     return(
-        <div id={id} >
+        <div id={id} className="recipe-card">
             <h2>{name}</h2>
             <img src={image} alt={name}className="img-card"></img>
             <h3>Effort to Prepare: {effortEmojis}</h3>
