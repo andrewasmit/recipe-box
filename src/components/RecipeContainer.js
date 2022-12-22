@@ -1,5 +1,6 @@
 import React from "react";
 import Recipe from "./Recipe";
+import RecipeCard from "./RecipeCard";
 
 function RecipeContainer({ apiRecipes, search, onAddRecipeClick, effortAmount }){
 

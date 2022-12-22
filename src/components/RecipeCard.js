@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Recipe({ 
+function RecipeCard({ 
         id, 
         name, 
         image, 
@@ -36,6 +36,17 @@ function Recipe({
 
     function handleUpdateRecipe(){
         console.log(id);
+        fetch(`http://localhost:3000/recipes/${id}`,{
+            method: "PATCH",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+
+            })
+        })
+        .then(res=>res.json())
+        .then(updatedRecipe=>console.log(updatedRecipe));
     }
 
 
@@ -65,4 +76,4 @@ function Recipe({
 }
 
 
-export default Recipe;
+export default RecipeCard;
