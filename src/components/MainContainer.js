@@ -64,6 +64,13 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
                         search={search} 
                         categorySelect={categorySelect}
                         onDeleteFromBox={onDeleteFromBox}
+                        setTitle={setTitle}
+                        setImgLink={setImgLink}
+                        setRecipeLink={setRecipeLink}
+                        setEffort={setEffort}
+                        setMeal={setMeal}
+                        setStatus={setStatus}
+                        setNotes={setNotes}
                     />
                 </Route>
                 <Route exact path="/">

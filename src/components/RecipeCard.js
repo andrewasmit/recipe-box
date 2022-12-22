@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 
 function RecipeCard({ 
         id, 
@@ -9,8 +10,17 @@ function RecipeCard({
         notes, 
         effort, 
         link, 
-        onDeleteFromBox,  
+        onDeleteFromBox, 
+        setTitle,
+        setImgLink,
+        setRecipeLink,
+        setEffort,
+        setMeal,
+        setStatus,
+        setNotes     
     }){
+
+        const history =useHistory()
 
     
     // State of 'Show More Details' button toggle
@@ -36,17 +46,27 @@ function RecipeCard({
 
     function handleUpdateRecipe(){
         console.log(id);
-        fetch(`http://localhost:3000/recipes/${id}`,{
-            method: "PATCH",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
 
-            })
-        })
-        .then(res=>res.json())
-        .then(updatedRecipe=>console.log(updatedRecipe));
+        setMeal(meal)
+        setTitle(name)
+        setNotes(notes)
+        setImgLink(image)
+        setRecipeLink(link)
+        setStatus(status)
+        setEffort(effort)
+        history.push("/add-recipe")
+    
+        // fetch(`http://localhost:3000/recipes/${id}`,{
+        //     method: "PATCH",
+        //     headers:{
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({
+
+        //     })
+        // })
+        // .then(res=>res.json())
+        // .then(updatedRecipe=>console.log(updatedRecipe));
     }
 
 
