@@ -78,7 +78,7 @@ function RecipeCard({
             <h4>Effort to Prepare: {effortEmojis}</h4>
             <a href={link} target="_blank">Full Recipe</a>
             <br></br>
-            <button onClick={()=>setShowMore(!showMore)}>Show More Details</button>
+            <button onClick={()=>setShowMore(!showMore)}>{showMore ? "Hide Details" : "Show More Details"}</button>
             <div hidden={ showMore ? null : "disabled"} id="show-more">
                 <h3>Meal: {meal}</h3>
                 
