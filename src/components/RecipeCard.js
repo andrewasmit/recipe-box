@@ -45,8 +45,6 @@ function RecipeCard({
     }
 
     function handleUpdateRecipe(){
-        console.log(id);
-
         setMeal(meal)
         setTitle(name)
         setNotes(notes)
