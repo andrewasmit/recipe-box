@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 function NewRecipe({ 
         onNewRecipeSubmit,
@@ -19,7 +18,6 @@ function NewRecipe({
         setRecipeLink
      }){
 
-    const history=useHistory();
 
     function handleFormSubmit(e){
         e.preventDefault();
@@ -52,7 +50,6 @@ function NewRecipe({
         })
         .then(res=>res.json())
         .then(data=>onNewRecipeSubmit(data))
-        history.push("/recipe-box")
     }
 
 

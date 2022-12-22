@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../index.css';
 import Header from './Header';
 import MainContainer from './MainContainer';
+import { useHistory } from 'react-router-dom';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [categorySelect, setCategorySelect] = useState("All")
   
+  const history = useHistory();
 
 
   // Fetch of db.json for "My Recipe Box"
@@ -22,7 +24,7 @@ useEffect(()=>{
 }, [])
 
 
-  // Fetch of 1,000 recipes from API
+  // Fetch of 100 recipes from API
   useEffect(()=>{
     const options = {
       method: 'GET',
@@ -40,6 +42,7 @@ useEffect(()=>{
 
 function handleNewRecipe(newRecipe){
   setRecipeData([...recipeData, newRecipe]);
+  history.push("/recipe-box")
 }
 
 function onDeleteFromBox(id){
