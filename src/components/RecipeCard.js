@@ -54,19 +54,8 @@ function RecipeCard({
         setRecipeLink(link)
         setStatus(status)
         setEffort(effort)
+        handleDeleteFromBox()
         history.push("/add-recipe")
-    
-        // fetch(`http://localhost:3000/recipes/${id}`,{
-        //     method: "PATCH",
-        //     headers:{
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-
-        //     })
-        // })
-        // .then(res=>res.json())
-        // .then(updatedRecipe=>console.log(updatedRecipe));
     }
 
 
