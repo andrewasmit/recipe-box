@@ -9,6 +9,7 @@ function NewRecipe({
         imgLink,
         setImgLink,
         notes,
+        setSearch,
         setNotes,
         status,
         setStatus,
@@ -40,6 +41,7 @@ function NewRecipe({
         setMeal("--Select an Option--")
         setStatus("--Select an Option--")
         setNotes("")
+        setSearch("")
 
         fetch("http://localhost:3000/recipes",{
             method: "POST",

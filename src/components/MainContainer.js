@@ -5,7 +5,7 @@ import RecipeContainer from "./RecipeContainer";
 import Home from "./Home";
 import NewRecipe from "./NewRecipe";
 
-function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRecipeSubmit, onDeleteFromBox }){
+function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRecipeSubmit, onDeleteFromBox, setSearch }){
     const history=useHistory();
 
     // The State of NewForm inputs
@@ -93,6 +93,7 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
                         setStatus={setStatus}
                         notes={notes}
                         setNotes={setNotes}
+                        setSearch={setSearch}
                     />
                 </Route>
                 <Route path="*">

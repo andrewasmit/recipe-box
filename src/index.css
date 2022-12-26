@@ -24,29 +24,30 @@ body {
   padding: 1rem;
 }
 
+
 .container{
-  display: inline-block;
   border: 2px solid black;
-  width: 90%;
-  margin: 0 auto;
-  padding: 1rem;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 10px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .recipe-card{
+  /* display: grid; */
   border: 2px solid rgb(8, 0, 255);
-  width: auto;
-  padding: 2px;
-  display: inline-block;
+  padding: 30px;
+  background-color: rgb(250, 215, 215);
+}
+
+.recipe-card:nth-child(even){
+  background-color: rgba(250, 235, 215, 0.758);
 }
 
 .img-card{
-  height: 30%;
-  width: 350px;
-}
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  height: auto;
+  width: 180px;
 }

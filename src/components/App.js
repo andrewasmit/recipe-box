@@ -67,6 +67,7 @@ function onDeleteFromBox(id){
           categorySelect={categorySelect}
           onNewRecipeSubmit={handleNewRecipe}
           onDeleteFromBox={onDeleteFromBox}
+          setSearch={setSearch}
       />
     </div>
   )
