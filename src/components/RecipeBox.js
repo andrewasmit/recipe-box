@@ -50,7 +50,6 @@ function RecipeBox({
     // Return of JSX
     return(
         <div id ="recipe-box" className="container">
-            <p>MY RECIPE BOX</p>
             {recipesToDisplay}
         </div>
     )

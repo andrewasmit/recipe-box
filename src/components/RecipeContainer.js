@@ -23,7 +23,6 @@ function RecipeContainer({ apiRecipes, search, onAddRecipeClick, effortAmount })
 
     return(
         <div id="recipe-container" className="container">
-            <p>RECIPE CONTAINER</p>
             {recipesToDisplay}
         </div>
     )
