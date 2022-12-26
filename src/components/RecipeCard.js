@@ -60,12 +60,12 @@ function RecipeCard({
     // Return JSX
     return(
         <div id={id} className="recipe-card">
-            <h2>{name}</h2>
+            <h2 className= "recipe-title">{name}</h2>
             <img src={image} alt={name} className="img-card"></img>
-            <h4>Effort to Prepare: {effortEmojis}</h4>
+            <h4 className= "effort-level">Effort to Prepare: {effortEmojis}</h4>
             <a href={link} target="_blank">Full Recipe</a>
             <br></br>
-            <button onClick={()=>setShowMore(!showMore)}>{showMore ? "Hide Details" : "Show More Details"}</button>
+            <button className= "show-more-btn" onClick={()=>setShowMore(!showMore)}>{showMore ? "Hide Details" : "Show More Details"}</button>
             <div hidden={ showMore ? null : "disabled"} id="show-more">
                 <h3>Meal: {meal}</h3>
                 
@@ -74,9 +74,9 @@ function RecipeCard({
                 <ul>
                     {noteLis}
                 </ul>
-                <button onClick={handleUpdateRecipe}>Edit Details</button>
+                <button className= "show-more-btn"onClick={handleUpdateRecipe}>Edit Details</button>
                 <br></br>
-                <button onClick={handleDeleteFromBox}>Delete from My Recipe Box</button>
+                <button className= "show-more-btn"onClick={handleDeleteFromBox}>Delete from My Recipe Box</button>
             </div>
         </div>
     )

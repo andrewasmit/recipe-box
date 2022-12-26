@@ -37,10 +37,13 @@ body {
 }
 
 .recipe-card{
-  /* display: grid; */
   border: 2px solid rgb(8, 0, 255);
   padding: 30px;
   background-color: rgb(250, 215, 215);
+  display: grid; 
+  grid-auto-rows: repeat(6, 1fr);
+  align-items: center;
+  justify-content: center;
 }
 
 .recipe-card:nth-child(even){
@@ -49,5 +52,21 @@ body {
 
 .img-card{
   height: auto;
-  width: 180px;
+  width: 160px;
+  align-items: center;
+  justify-items: center;
+}
+
+.recipe-title{
+  font-size: large;
+}
+
+.effort-level{
+  font-size: small;
+}
+
+.show-more-btn{
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
 }
