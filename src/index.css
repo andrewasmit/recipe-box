@@ -19,14 +19,12 @@ body {
 }
 
 #main-container{
-  border: 4px solid rgb(251, 0, 0);
   margin: 0 ;
-  padding: 1rem;
+  padding: 25px;
 }
 
 
 .container{
-  border: 2px solid black;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -37,7 +35,7 @@ body {
 }
 
 .recipe-card{
-  border: 2px solid rgb(8, 0, 255);
+  border: 1px solid black;
   padding: 10px;
   background-color: rgb(250, 215, 215);
   display: grid; 
@@ -67,9 +65,18 @@ body {
 }
 
 .show-more-btn{
+  /* background-color:  #54b3d6; */
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
+}
+
+.show-more-btn:hover {
+  background-color:  #54b3d6;
+}
+.show-more-btn:active {
+  background-color: #d67754;
+  color: white;
 }
 
 
@@ -83,9 +90,26 @@ body {
   margin-block-end: 15px ;
 }
 
-#navbar :any-link{
+/* #navbar :any-link{
   display: inline;
   padding: 20px;
   size: large;
   color: aliceblue;
+} */
+#navbar a {
+  display: inline;
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  margin: 0, -.25rem;
+  padding: .25rem;
+  transition: color , box-shadow ;
+}
+#navbar a:hover {
+  box-shadow: inset 400px 0 0 0 #54b3d6;
+  color: white;
+}
+
+#navbar a:active {
+  box-shadow: inset 400px 0 0 0 #d67754;
+  color: white;
 }

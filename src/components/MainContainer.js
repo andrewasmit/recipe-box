@@ -48,7 +48,6 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
     // Return of JSX
     return(
         <div id="main-container" className="main-container">
-            <p>MAIN CONTAINER</p>
             <Switch>
                 <Route exact path="/recipes">
                     <RecipeContainer 
