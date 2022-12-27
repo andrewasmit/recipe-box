@@ -63,7 +63,7 @@ function RecipeCard({
             <h2 className= "recipe-title">{name}</h2>
             <img src={image} alt={name} className="img-card"></img>
             <h4 className= "effort-level">Effort to Prepare: {effortEmojis}</h4>
-            <a href={link} target="_blank">Full Recipe</a>
+            <a href={link} target="_blank">Go to Full Recipe</a>
             <br></br>
             <button className= "show-more-btn" onClick={()=>setShowMore(!showMore)}>{showMore ? "Hide Details" : "Show More Details"}</button>
             <div hidden={ showMore ? null : "disabled"} id="show-more">

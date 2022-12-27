@@ -13,7 +13,7 @@ function Recipe({ id, name, image, effort, link, onAddRecipeClick, effortAmount 
         <div id={id} className="recipe-card">
             <h2>{name}</h2>
             <img src={image} alt={name}className="img-card"></img>
-            <h3>Effort to Prepare: {effortEmojis}</h3>
+            <h4>Effort to Prepare: {effortEmojis}</h4>
             <br></br>
             <a href={link} target="_blank">Go to Full Recipe</a>
             <br></br>
