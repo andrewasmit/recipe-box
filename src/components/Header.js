@@ -8,7 +8,11 @@ function Header({ search, setSearch, categorySelect, setCategorySelect }){
 
     return(
         <div className="App-header">
-            <h1>Recipe Box</h1>
+            <div id='logo-header'>
+                <img href='.../public/recipe-book-logo.png' alt='logo'></img>
+                <h1>Recipe Box</h1>
+            </div> 
+            
             <NavBar />
             <Switch>
                 <Route exact path="/recipe-box">

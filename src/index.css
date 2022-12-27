@@ -18,6 +18,18 @@ body {
   color: white;
 }
 
+#logo-header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+#logo-header h1 {
+  float: left;
+  top: 18px;
+  left: 10px;
+}
+
 #main-container{
   margin: 0 ;
   padding: 25px;
