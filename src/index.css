@@ -38,7 +38,7 @@ body {
 
 .recipe-card{
   border: 2px solid rgb(8, 0, 255);
-  padding: 30px;
+  padding: 10px;
   background-color: rgb(250, 215, 215);
   display: grid; 
   grid-auto-rows: repeat(6, 1fr);

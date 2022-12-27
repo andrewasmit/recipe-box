@@ -26,23 +26,13 @@ function NewRecipe({
             name: title,
             image: imgLink,
             status: status,
-            effort: effort,
+            effort: parseInt(effort),
             meal: meal,
             notes:[
                 notes
             ],
             link: recipeLink,
         };
-        
-        setTitle("")
-        setImgLink("")
-        setRecipeLink("")
-        setEffort("--Select an Option--")
-        setMeal("--Select an Option--")
-        setStatus("--Select an Option--")
-        setNotes("")
-        setSearch("")
-
         fetch("http://localhost:3000/recipes",{
             method: "POST",
             headers:{
@@ -52,6 +42,15 @@ function NewRecipe({
         })
         .then(res=>res.json())
         .then(data=>onNewRecipeSubmit(data))
+        console.log(newRecipe)
+        setTitle("")
+        setImgLink("")
+        setRecipeLink("")
+        setEffort("--Select an Option--")
+        setMeal("--Select an Option--")
+        setStatus("--Select an Option--")
+        setNotes("")
+        setSearch("")
     }
 
 
