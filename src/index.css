@@ -71,3 +71,21 @@ body {
   margin: 5px;
   padding: 5px;
 }
+
+
+#navbar{
+  margin-block-end: 15px ;
+}
+#search-bar{
+  margin-block-end: 15px ;
+}
+#filter{
+  margin-block-end: 15px ;
+}
+
+#navbar :any-link{
+  display: inline;
+  padding: 20px;
+  size: large;
+  color: aliceblue;
+}
