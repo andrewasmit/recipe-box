@@ -57,28 +57,28 @@ function NewRecipe({
 
     // Return JSX
     return(
-        <div id ="add-new-recipe" className="container">
-            <p>ADD NEW RECIPE</p>
+        <div id ="add-new-recipe" className="add-new-recipe">
+            <h2>ADD NEW RECIPE</h2>
             <form onSubmit={handleFormSubmit}>
                 <label>
-                    Title:
-                    <input value={title} onChange={e=>setTitle(e.target.value)} type="text" name="title" />
+                    {/* Title: */}
+                    <input value={title} onChange={e=>setTitle(e.target.value)} type="text" name="title" placeholder="Title" className="text-input"/>
                 </label>
                 <br></br>
                 <label>
-                    Link to Image:
-                    <input value={imgLink} onChange={e=>setImgLink(e.target.value)} type="text" name="image" />
+                    {/* Link to Image: */}
+                    <input placeholder="Link to Image" value={imgLink} onChange={e=>setImgLink(e.target.value)} type="text" name="image" className="text-input"/>
                 </label>
                 <br></br>
                 <label>
-                    Link to Full Recipe:
-                    <input value={recipeLink} onChange={e=>setRecipeLink(e.target.value)} type="text" name="link" />
+                    {/* Link to Full Recipe: */}
+                    <input placeholder="Link to Full Recipe" value={recipeLink} onChange={e=>setRecipeLink(e.target.value)} type="text" name="link" className="text-input"/>
                 </label>
                 <br></br>
                 <label>
-                    Effort :
-                    <select value ={effort} onChange={e=>setEffort(e.target.value)} name="effort" >
-                        <option disabled>--Select an Option--</option>
+                    {/* Effort : */}
+                    <select value ={effort} onChange={e=>setEffort(e.target.value)} name="effort" className="dropdown">
+                        <option disabled>--Select Effort Level--</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -88,9 +88,9 @@ function NewRecipe({
                 </label>
                 <br></br>
                 <label>
-                    Meal :
-                    <select value ={meal} onChange={e=>setMeal(e.target.value.toLowerCase())} name="Meal" >
-                        <option disabled>--Select an Option--</option>
+                    {/* Meal : */}
+                    <select value ={meal} onChange={e=>setMeal(e.target.value.toLowerCase())} name="Meal" className="dropdown">
+                        <option disabled>--Select Meal--</option>
                         <option>Breakfast</option>
                         <option>Lunch</option>
                         <option>Dinner</option>
@@ -100,9 +100,9 @@ function NewRecipe({
                 </label>
                 <br></br>
                 <label>
-                    Status :
-                    <select value={status} onChange={e=>setStatus(e.target.value.toLowerCase())} name="status" >
-                        <option disabled>--Select an Option--</option>
+                    {/* Status : */}
+                    <select value={status} onChange={e=>setStatus(e.target.value.toLowerCase())} name="status" className="dropdown">
+                        <option disabled>--Select Status of Recipe--</option>
                         <option>Repeat</option>
                         <option>Need to try it</option>
                         <option>Meh</option>
@@ -110,8 +110,8 @@ function NewRecipe({
                 </label>
                 <br></br>
                 <label>
-                    Notes: (optional)
-                    <input value={notes} onChange={e=>setNotes(e.target.value)} type="text" name="notes" />
+                    {/* Notes: (optional) */}
+                    <input placeholder= "Notes (optional)" value={notes} onChange={e=>setNotes(e.target.value)} type="text" name="notes" className="text-input"/>
                 </label>
                 <br></br>
                 <input type="submit" value="Submit" />

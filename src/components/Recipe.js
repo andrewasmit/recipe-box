@@ -15,7 +15,7 @@ function Recipe({ id, name, image, effort, link, onAddRecipeClick, effortAmount 
             <img src={image} alt={name}className="img-card"></img>
             <h4>Prep Time: {effortEmojis}</h4>
             <br></br>
-            <a href={link} target="_blank">Go to Full Recipe</a>
+            <a href={link} rel="noreferrer" target="_blank">Go to Full Recipe</a>
             <br></br>
             <button onClick={handleAddToClick}>Add to My Recipe Box!</button>
         </div>

@@ -12,9 +12,9 @@ function MainContainer({ recipeData, apiRecipes, search, categorySelect, onNewRe
     const [title, setTitle] = useState("")
     const [imgLink, setImgLink] = useState("")
     const [recipeLink, setRecipeLink] = useState("")
-    const [effort, setEffort] = useState("--Select an Option--")
-    const [meal, setMeal] = useState("--Select an Option--")
-    const [status, setStatus] =useState("--Select an Option--")
+    const [effort, setEffort] = useState("--Select Effort Level--")
+    const [meal, setMeal] = useState("--Select Meal--")
+    const [status, setStatus] =useState("--Select Status of Recipe--")
     const [notes, setNotes] = useState("")
 
     // Auto-populating the NewRecipe form data upon click

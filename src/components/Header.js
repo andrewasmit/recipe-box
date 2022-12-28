@@ -9,7 +9,7 @@ function Header({ search, setSearch, categorySelect, setCategorySelect }){
     return(
         <div className="App-header">
             <div id='logo-header'>
-                <img href='.../public/recipe-book-logo.png' alt='logo'></img>
+                <img src='.../public/recipe-book-logo.png' alt='logo' />
                 <h1>Recipe Box</h1>
             </div> 
             
