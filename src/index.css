@@ -33,8 +33,10 @@ body {
 }
 
 #main-container{
-  margin: 0 ;
+  margin: 0;
   padding: 25px;
+  background-color: rgb(247, 239, 229);
+  height: 500px;
 }
 
 
@@ -60,7 +62,7 @@ body {
 }
 
 .recipe-card:nth-child(even){
-  background-color: rgba(250, 235, 215, 0.758);
+  background-color: rgba(249, 222, 186, 0.758);
 }
 
 .img-card{
@@ -126,27 +128,32 @@ body {
 
 /* New Recipe Form */
 #add-new-recipe{
-  background-color: aquamarine;
+  background-color: rgb(158, 191, 198);
   box-sizing: border-box;
-  width:90%;
+  width:95%;
   padding:20px;
+  text-align: center;
 }
 
+#add-new-recipe h2{
+  color: #2f343e;
+}
 #add-new-recipe select{
   width: 252px;
   padding: 5px;
-  margin: 5px;
+  margin: auto;
   text-align: center;
   border-radius: 5px;
   color: #555;
+  display: block;
 }
 #add-new-recipe input{
   width: 240px;
   padding: 5px;
-  margin: 5px;
+  margin: auto;
   border: .5px solid black;
   border-radius: 5px;
-
+  display: block;
 }
 
 /* Submit Button for New Recipes */
@@ -155,6 +162,8 @@ body {
   margin: 5px;
   padding: 5px;
   width: 100px;
+  background-color: rgba(211, 208, 208, 0.867);
+  color: rgb(17, 54, 24);
 }
 
 #new-submit-btn:hover {
