@@ -114,7 +114,7 @@ function NewRecipe({
                     <input placeholder= "Notes (optional)" value={notes} onChange={e=>setNotes(e.target.value)} type="text" name="notes" className="text-input"/>
                 </label>
                 <br></br>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" id="new-submit-btn"/>
             </form>
         </div>
     )

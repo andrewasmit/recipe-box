@@ -2,9 +2,9 @@ import React from "react";
 
 function Filter({ categorySelect, setCategorySelect }){
     return(
-        <div id= "filter">
+        <div id= "filter" >
             <label>Filter by Category</label>
-                <select value={categorySelect} onChange={e=>setCategorySelect(e.target.value)}>
+                <select value={categorySelect} onChange={e=>setCategorySelect(e.target.value)}className="searchBar">
                     <option>All</option>
                     <option>Breakfast</option>
                     <option>Lunch</option>
