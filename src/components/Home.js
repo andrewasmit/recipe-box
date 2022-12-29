@@ -3,11 +3,10 @@ import React, {useEffect, useState } from "react";
 function Home(){
 
     const [currentSlide, setCurrentSlide] = useState(0);
-    // const [slides, setSlides] = useState=([]);
+    // const [timer, setTimer] = useState(0);
 
     // Event Handler for Carousel
     function handleSlideClick(e){
-        console.log(e.target.id)
         if (e.target.id === "next-slide"){
             handleNextSlide()
         }
@@ -34,21 +33,32 @@ function Home(){
         }        
     }
 
-    // useEffect to grab each slide after rendering and then define their X-Axis
+
+    // useEffect to grab each slide after rendering and then define their X-Axis accordingly
     useEffect(()=>{
         const slides = document.getElementsByClassName('slide')
-        console.log(slides);
         Array.from(slides).forEach((slide, idx) => {
             slide.style.transform = `translateX(${100 * (idx - currentSlide)}%)`;
           });
     },[currentSlide]);
 
-   
-console.log(currentSlide);
 
+    useEffect(()=>{
+        const timerId = setInterval(()=>{
+            handleNextSlide()
+        },5000);
+
+        return function cleanup(){
+            clearInterval(timerId);
+          };
+    })
+
+   
+
+    // Return of JSX
     return(
         <div id ="home" >
-            <h2>WELCOME</h2>
+            <h2>Storing and discovering recipes made easy</h2>
             <div id="home-slider">
                 <div className="slide" id="slide-1">
                     <img src="1main.jpg" alt="cooking" />
