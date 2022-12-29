@@ -1,8 +1,10 @@
 import React from "react";
 
+
 function Home(){
     return(
         <div id ="home" >
+            <h2>WELCOME</h2>
             <div id="home-slider">
                 <div className="slide" id="slide-1">
                     <img src="1main.jpg" alt="cooking picture" />
