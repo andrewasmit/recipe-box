@@ -3,7 +3,6 @@ import React, {useEffect, useState } from "react";
 function Home(){
 
     const [currentSlide, setCurrentSlide] = useState(0);
-    // const [timer, setTimer] = useState(0);
 
     // Event Handler for Carousel
     function handleSlideClick(e){
@@ -42,7 +41,8 @@ function Home(){
           });
     },[currentSlide]);
 
-
+    
+// Timer for automatically rotating through the carousel
     useEffect(()=>{
         const timerId = setInterval(()=>{
             handleNextSlide()

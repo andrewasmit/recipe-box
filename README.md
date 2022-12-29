@@ -7,7 +7,7 @@ This is a Single-Page Application that gives users a space to store their favori
 ### Project Details
 This project is built with React.js and utilizes a db.json to act as a server the back-end. The repo for the back-end can be found [HERE](https://github.com/andrewasmit/recipe-box_back). 
 
-This project incorporates Tailwind for styling purposes in addition to CSS.
+This project is styled with vanilla CSS.
 
 ### Installation
 Fork and clone the back-end repo and then change into the directory you created.
