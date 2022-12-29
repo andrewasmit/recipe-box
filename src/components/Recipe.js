@@ -17,7 +17,7 @@ function Recipe({ id, name, image, effort, link, onAddRecipeClick, effortAmount 
             <br></br>
             <a href={link} rel="noreferrer" target="_blank">Go to Full Recipe</a>
             <br></br>
-            <button onClick={handleAddToClick}>Add to My Recipe Box!</button>
+            <button className="show-more-btn" onClick={handleAddToClick}>Add to My Recipe Box!</button>
         </div>
     )
 }
