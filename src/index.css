@@ -21,8 +21,10 @@ body {
 /* Title and Logo */
 #logo-header img {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  margin-top: 22px;
   background: #555;
 }
 #logo-header h1 {

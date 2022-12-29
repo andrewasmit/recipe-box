@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import RecipeBox from "./RecipeBox";
 import RecipeContainer from "./RecipeContainer";
