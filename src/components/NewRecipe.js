@@ -25,9 +25,9 @@ function NewRecipe({
         const newRecipe={
             name: title,
             image: imgLink,
-            status: status,
+            status: status.toLowerCase(),
             effort: parseInt(effort),
-            meal: meal,
+            meal: meal.toLowerCase(),
             notes:[
                 notes
             ],
@@ -52,7 +52,6 @@ function NewRecipe({
         setNotes("")
         setSearch("")
     }
-
 
 
     // Return JSX
@@ -89,7 +88,7 @@ function NewRecipe({
                 <br></br>
                 <label>
                     {/* Meal : */}
-                    <select value ={meal} onChange={e=>setMeal(e.target.value.toLowerCase())} name="Meal" className="dropdown">
+                    <select value ={meal} onChange={e=>setMeal(e.target.value)} name="Meal" className="dropdown">
                         <option disabled>--Select Meal--</option>
                         <option>Breakfast</option>
                         <option>Lunch</option>
@@ -101,7 +100,7 @@ function NewRecipe({
                 <br></br>
                 <label>
                     {/* Status : */}
-                    <select value={status} onChange={e=>setStatus(e.target.value.toLowerCase())} name="status" className="dropdown">
+                    <select value={status} onChange={e=>setStatus(e.target.value)} name="status" className="dropdown">
                         <option disabled>--Select Status of Recipe--</option>
                         <option>Repeat</option>
                         <option>Need to try it</option>
